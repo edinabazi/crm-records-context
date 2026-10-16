@@ -1,0 +1,44 @@
+{
+  "referenceDate": "2026-10-17",
+  "objects": {
+    "users": {
+      "primaryKey": "Id",
+      "fields": {
+        "Id": "string",
+        "Name": "string"
+      }
+    },
+    "leads": {
+      "primaryKey": "Id",
+      "fields": {
+        "Id": "string",
+        "FirstName": "string",
+        "LastName": "string",
+        "Company": "string",
+        "Status": "string",
+        "OwnerId": "users.Id"
+      }
+    },
+    "contacts": {
+      "primaryKey": "Id",
+      "fields": {
+        "Id": "string",
+        "FirstName": "string",
+        "LastName": "string",
+        "AccountName": "string",
+        "OwnerId": "users.Id"
+      }
+    },
+    "tasks": {
+      "primaryKey": "Id",
+      "fields": {
+        "Id": "string",
+        "WhoId": "leads.Id or contacts.Id",
+        "OwnerId": "users.Id",
+        "Subject": "string",
+        "ActivityDate": "date",
+        "Status": "string"
+      }
+    }
+  }
+}
